@@ -4,14 +4,27 @@ public class Solution2 {
 
     private ListNode reverseList(ListNode head) {
 
-        if (head == null){
+        /*if (head == null){
             return null;
         }
-
         ListNode resultNode = new ListNode();
         ListNode result = new ListNode();
         cycle(result,resultNode,head);
-        return result;
+        return result;*/
+
+        //空间复杂度和栈空间相关联，执行一次方法就会产生一个栈空间，所以递归方法的空间复杂度为  O(n)，n为链表的长度
+
+        if (head == null || head.next == null){
+            return head;
+        }
+
+        ListNode resultNode = reverseList(head.next);
+        // eg: head为4 ， 4→5→4
+        head.next.next = head;
+        // 4→null，结果 5→4→null    防止循环依赖报错(4→5→4→5→4→5→4......)
+        head.next = null;
+
+        return resultNode;
     }
 
     private ListNode cycle(ListNode result, ListNode resultNode, ListNode head){

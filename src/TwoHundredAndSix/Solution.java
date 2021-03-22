@@ -4,27 +4,16 @@ public class Solution {
 
     private ListNode reverseList(ListNode head) {
 
-        if (head == null){
-            return null;
+        ListNode pre = null;
+
+        while (head != null) {
+            ListNode after = head.next;
+            head.next = pre;
+            pre = head;
+            head = after;
         }
 
-        ListNode listNode = head;
-        ListNode node;
-        ListNode moveNode;
-
-        node = listNode.next;
-        moveNode = new ListNode(listNode.val);
-        listNode = node;
-
-
-        while (listNode != null) {
-            node = listNode.next;
-            listNode.next = moveNode;
-            moveNode = listNode;
-            listNode = node;
-        }
-
-        return moveNode;
+        return pre;
 
     }
 
