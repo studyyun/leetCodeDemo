@@ -13,7 +13,7 @@ public class Solution {
         int i = maxDepth(root.left);
         int j = maxDepth(root.right);
 
-        return Math.max(++i,++j);
+        return Math.max(i,j)+1;
     }
 
 }
