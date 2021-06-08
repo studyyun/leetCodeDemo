@@ -1,36 +1,30 @@
-import java.util.HashSet;
-import java.util.Set;
-
 public class Test {
 
+    public static int[] testArr(int[] nums1, int m, int[] nums2, int n) {
+        int p1 = 0, p2 = 0, cur = 0, i = 0;
+        int[] sumArr = new int[m + n];
+        while (p1 < m || p2 < n) {
+            if (p1 == m) {
+                cur = nums2[p2++];
+            } else if (p2 == n) {
+                cur = nums1[p1++];
+            } else if (nums1[p1] < nums2[p2]) {
+                cur = nums1[p1++];
+            } else {
+                cur = nums2[p2++];
+            }
+            sumArr[i++] = cur;
+        }
+        return sumArr;
+    }
+
     public static void main(String[] args) {
-
-        /*String a = "abc";
-        System.out.println(a);
-        System.out.println(a);
-        System.out.println(a);
-        System.out.println(a);
-        System.out.println(a);
-        String b = a+"ddd";
-        System.out.println(b);*/
-
-
-        Set<Integer> set = new HashSet<>();
-        set.add(1);
-        set.add(1);
-        set.add(3);
-        set.add(4);
-
-//        System.out.println(set.iterator().next());
-//        set.remove(1);
-        /*System.out.println(set.iterator().next());
-        set.remove(3);
-        System.out.println(set.iterator().next());
-        set.remove(4);
-        System.out.println(set.iterator().next());*/
-
-        set.forEach(System.out::println);
-
+        int[] nums1 = {1,2,3};
+        int[] nums2 = {4,5,6};
+        int[] ints = Test.testArr(nums1,3, nums2,3);
+        for (int i : ints) {
+            System.out.print(i + " ");
+        }
     }
 
 }
