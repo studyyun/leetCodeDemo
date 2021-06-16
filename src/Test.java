@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Test {
 
     public static int[] testArr(int[] nums1, int m, int[] nums2, int n) {
@@ -19,12 +23,35 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = {1,2,3};
-        int[] nums2 = {4,5,6};
-        int[] ints = Test.testArr(nums1,3, nums2,3);
-        for (int i : ints) {
-            System.out.print(i + " ");
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+
+        List<Integer> collect = list.stream().filter((i) -> (i / 5) == 1).collect(Collectors.toList());
+
+        if (collect == null || collect.isEmpty()){
+            System.out.println("hello");
         }
+        
+        int j = 2;
+        collect.forEach((i)->{
+            if ((i & 1) == 1){
+                return;
+            }
+            System.out.println(i);
+        });
+        
+        List<String> list2 = new ArrayList<>();
+        list2.add("");
+        list2.add("");
+        list2.add("");
+        list2.add("");
+        list2.add("");
+        list2.add("");
+
+        
     }
 
 }
