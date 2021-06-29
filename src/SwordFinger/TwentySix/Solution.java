@@ -27,6 +27,7 @@ public class Solution {
             return false;
         }
         if (A.val == B.val) {
+            //标记已经找到第一个相同的节点，开始进行对比
             start = true;
             boolean flag = recursion(A.left, B.left) && recursion(A.right, B.right);
             if (flag){
@@ -34,6 +35,7 @@ public class Solution {
             }
 
         }
+        //回溯，如果已经开始对比，但是有节点的值不相等，就回溯
         if (start) {
             start = false;
             return false;
