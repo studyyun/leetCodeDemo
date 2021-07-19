@@ -11,6 +11,7 @@ public class Solution {
     
     Node pre,head;
     
+    //从小到大的顺序：二叉搜索树的中序遍历！！
     public Node treeToDoublyList(Node root) {
         dfs(root);
         head.left = pre;
