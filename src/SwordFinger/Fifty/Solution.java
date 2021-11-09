@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class Solution {
 
-    public char firstUniqChar(String s) {
+    public char  firstUniqChar(String s) {
 //        Map<Character, Boolean> map = new HashMap<>(32);
         
         //有序哈希表，LinkedHashMap是按插入顺序排列的。
