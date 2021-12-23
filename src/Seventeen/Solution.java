@@ -14,6 +14,7 @@ public class Solution {
     private List<String> res = new ArrayList<>();
     private String[] strs;
     
+    //这里是全排列的问题，使用回溯法
     public List<String> letterCombinations(String digits) {
         if (digits.length() == 0) {
             return res;
