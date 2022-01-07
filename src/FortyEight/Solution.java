@@ -7,7 +7,8 @@ package FortyEight;
  * @date 2022-01-06  9:37
  */
 public class Solution {
-
+    
+    //旋转90° = 水平翻转 + 主对角线翻转
     public void rotate(int[][] matrix) {
         int xLength = matrix.length - 1, yLength = matrix[0].length - 1;
         
