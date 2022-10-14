@@ -31,7 +31,7 @@ public class Solution {
     /**
      * 分治法，递归
      * 所以这里其实是把前序中的每个节点来构建树，中序主要是用来找寻边界和定位前序中的节点
-     * 
+     *
      * @param root  前序中的根节点索引
      * @param left  中序中的左边界索引
      * @param right 中序中的右边界索引
@@ -47,7 +47,7 @@ public class Solution {
         //左子树
         node.left = recursion(root + 1, left, i - 1);
         //右子树
-        node.right = recursion((root + 1) + (i - 1 - left + 1), i + 1, right);
+        node.right = recursion(root + (i - left) + 1, i + 1, right);
         return node;
     }
 

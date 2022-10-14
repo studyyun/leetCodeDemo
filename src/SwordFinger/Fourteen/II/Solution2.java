@@ -37,7 +37,7 @@ public class Solution2 {
         }else {
             return (int) (result * 3 * 2 % mod);
         }
-        
+
     }
 
     public static void main(String[] args) {
@@ -46,5 +46,5 @@ public class Solution2 {
 //        System.out.println((1000000007L * 1000000007L) % 1000000007L);
         System.out.println(Math.pow(2,63) < (1000000007L * 1000000007L));
     }
-    
+
 }

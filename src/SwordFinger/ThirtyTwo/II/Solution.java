@@ -30,6 +30,7 @@ public class Solution {
         while (queue.size() > 0) {
             List<Integer> list1 = new ArrayList<Integer>();
             //这样倒着遍历，就不会受到queue大小改变的影响，绝了
+            //for循环只会执行一次初始化
             for (int i = queue.size(); i > 0; i--) {
                 TreeNode node = queue.poll();
                 list1.add(node.val);
@@ -41,7 +42,7 @@ public class Solution {
                 }
             }
             list.add(list1);
-            
+
         }
         return list;
     }

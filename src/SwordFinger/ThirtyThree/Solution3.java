@@ -37,7 +37,8 @@ public class Solution3 {
     }
 
     public static void main(String[] args) {
-        new Solution3().verifyPostorder(new int[]{1, 3, 2, 6, 5});
+        int[] postorder = new int[]{4, 8, 6, 12, 16, 14, 10};
+        new Solution3().verifyPostorder(postorder);
     }
 
 }
